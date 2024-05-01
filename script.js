@@ -7,9 +7,9 @@ let totalImages = 0;
 let photoArray = [];
 
 //Unsplash API
-const count = 30;
+let count = 5;
 const apiKey = "n1xWHvY1skqdJK4NoWbvAd8dmhuDcvrNz3eu_ySbkYA";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}
+let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}
 `;
 
 //Check if all image were loaded
@@ -18,6 +18,9 @@ function imageLoaded() {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.hidden = true;
+    count = 30;
+    apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}
+`;
   }
 }
 // Helping Function to Set Attributes on DOM Elements
